@@ -20,22 +20,18 @@ const Navigation = () => {
                             About
                         </NavLink>
                     </li>
-                    <li className={`${styles.navItem} ${styles.dropdown}`}>
-                        <NavLink to={"/games"}>
+                    <li className={styles.dropDownMenu}>
+                        <NavLink className={styles.navItem} to={"/games"}>
                             Game
                         </NavLink>
-                        <ul className={styles.dropdownMenu}>
-                            <li>
-                                <NavLink to={"/tic-tac-toe"}>
-                                    Tic-tac-toe
-                                </NavLink>
-                            </li>
-                            <li>
-                                <NavLink to={"/calculatrice"}>
-                                    Calculatrice
-                                </NavLink>
-                            </li>
-                        </ul>
+                        <div className={styles.dropDownItems}>
+                            <NavLink className={styles.itemList} to={"/tic-tac-toe"}>
+                                Tic-tac-toe
+                            </NavLink>
+                            <NavLink className={styles.itemList} to={"/calculatrice"}>
+                                Calculatrice
+                            </NavLink>
+                        </div>
                     </li>
                 </ul>
             </div>

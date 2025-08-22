@@ -34,3 +34,38 @@
 .bandeau {
   background-color: bisque;
 }
+
+.dropDownMenu {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  .dropDownItems {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+
+    .itemList {
+      display: none;
+      height: 40px;
+      place-items: center;
+      text-decoration: none;
+      color: #333;
+
+      &:nth-child(2n+1) {
+        background-color: darkseagreen;
+      }
+      &:nth-child(2n) {
+        background-color: aliceblue;
+      }
+    }
+  }
+}
+
+.dropDownMenu:hover .itemList {
+  display: grid;
+  &:hover {
+    background-color: aquamarine;
+  }
+}
