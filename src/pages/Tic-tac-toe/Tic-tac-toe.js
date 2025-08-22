@@ -28,8 +28,12 @@ const TicTacToe = () => {
     const handleNextTurn = (numSquare, newSquares) => {
         setSquares(newSquares);
         setTour(tour+1);
+        const isFinished = tour + 1 === 9;
         if(calculateWinner(numSquare, newSquares)) {
             setWinner(player);
+            setShowPopup(true);
+        }
+        if(isFinished) {
             setShowPopup(true);
         }
         console.log(squares);
@@ -43,16 +47,25 @@ const TicTacToe = () => {
             setShowPopup(false);
         }
         return (
-          <div className={"popup-overlay"}>
-              <div className={"popup-content"}>
-                  <p>Le gagnant est le joueur {winner}</p>
-                  <p>Voulez-vous rejouer ?</p>
-                  <button onClick={newPartie}>Oui</button>
-                  <button><NavLink to={"/home"}>
-                      Menu
-                  </NavLink></button>
-              </div>
-          </div>
+            <div className={"popup-overlay"}>
+                <div className={"popup-content"}>
+                    {winner !== null ? (
+                            <>
+                                <p>Le gagnant est le joueur {winner}</p>
+                            </>
+                        ) :
+                        (
+                            <>
+                                <p>Pas de gagnant</p>
+                            </>
+                        )}
+                    <p>Voulez-vous rejouer ?</p>
+                    <button onClick={newPartie}>Oui</button>
+                    <button><NavLink to={"/home"}>
+                        Menu
+                    </NavLink></button>
+                </div>
+            </div>
         );
     }
 

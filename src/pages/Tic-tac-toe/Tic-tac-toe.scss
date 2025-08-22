@@ -36,6 +36,22 @@
   gap: 0;
 }
 
+.board-row:nth-child(1) .square:nth-child(1) {
+  border-top-left-radius: 15px;
+}
+
+.board-row:nth-child(1) .square:nth-child(3) {
+  border-top-right-radius: 15px;
+}
+
+.board-row:nth-child(3) .square:nth-child(1) {
+  border-bottom-left-radius: 15px;
+}
+
+.board-row:nth-child(3) .square:nth-child(3) {
+  border-bottom-right-radius: 15px;
+}
+
 .popup-overlay {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1000;
