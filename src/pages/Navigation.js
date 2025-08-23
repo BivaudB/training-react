@@ -28,7 +28,7 @@ const Navigation = () => {
                             <NavLink className={styles.itemList} to={"/tic-tac-toe"}>
                                 Tic-tac-toe
                             </NavLink>
-                            <NavLink className={styles.itemList} to={"/calculatrice"}>
+                            <NavLink className={styles.itemList} to={"/calculator"}>
                                 Calculatrice
                             </NavLink>
                         </div>
